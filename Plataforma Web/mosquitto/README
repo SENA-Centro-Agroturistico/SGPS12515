@@ -1,0 +1,10 @@
+# Probar 
+
+ejecutar docker 
+
+docker compose up -d
+
+# probar si recibe peticiones
+docker container exec mosquitto mosquitto_pub -t 'bedroom/temperature' -m '20'
+docker run -it --rm efrecon/mqtt-client pub -h IPSERVER -p 1883 -t "iescelia/aula22/co2" -m '30'                                                                                         
+docker run -it --rm efrecon/mqtt-client sub -h IPSERVER -t "iescelia/#" 
