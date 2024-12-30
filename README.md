@@ -5,6 +5,7 @@ El presente documento publica los resultados de los productos de software en el 
 * Firmware Gateway LoRa Wifi
 * Firmware Báscula IoT
 * Firmware Sensor de ambiente
+* Esquemas Eléctricos
 * Plataforma Web - Broker MQTT
 * Plataforma Web - NodeRED
 * Plataforma Web - Bases de datos
