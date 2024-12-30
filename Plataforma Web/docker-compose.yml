@@ -1,66 +1,128 @@
-services: 
+services:
+  api:
+    container_name: api
+    build:
+      context: ./api_sena_IOT
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - iot
+    ports:
+      - 4000:4000
+    depends_on:
+      - influxdb
+      - mosquitto
+    env_file:
+      - ./api_sena_IOT/.env
+    volumes:
+      - api_auth_data:/usr/src/app/.wwebjs_auth
+
   mosquitto:
     container_name: mosquitto
     image: eclipse-mosquitto:2.0.18-openssl
     restart: always
     ports:
-      - 1883:1883
+      - 1603:1603
     networks:
       - iot
+    environment:
+      - MOSQUITTO_USERNAME=${MOSQUITTO_USERNAME}
+      - MOSQUITTO_PASSWORD=${MOSQUITTO_PASSWORD}
     volumes:
       - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
-      - mosquitto_data:/mosquitto/data
-      - mosquitto_log:/mosquitto/log
-
-  telegraf:
-    container_name: telegraf
-    image: telegraf:1.18
-    restart: always
-    networks:
-      - iot
-    volumes:
-      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
-    depends_on: 
-      - influxdb
+      - ./mosquitto/password_file:/mosquitto/password_file
+      - ./data:/mosquitto/data
+      - ./log:/mosquitto/log
 
   influxdb:
     container_name: influxdb
-    image: influxdb:1.8
-    restart: always
-    ports:
-      - 8086:8086
+    image: influxdb:2.6
     networks:
       - iot
-    volumes:
-      - influxdb_data:/var/lib/influxdb
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - 1500:8086
     environment:
-      - INFLUXDB_DB=${INFLUXDB_DB}
-      - INFLUXDB_ADMIN_USER=${INFLUXDB_USERNAME}
-      - INFLUXDB_ADMIN_PASSWORD=${INFLUXDB_PASSWORD}
-      - INFLUXDB_HTTP_AUTH_ENABLED=true
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=${INFLUXDB_USERNAME}
+      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUXDB_PASSWORD}
+      - DOCKER_INFLUXDB_INIT_BUCKET=my-init-bucket
+      - DOCKER_INFLUXDB_INIT_ORG=my-init-org
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=secret-token
+    volumes:
+      - ./influxdb/data:/var/lib/influxdb2:rw
+      - ./influxdb/config:/etc/influxdb2
 
-  chronograf:
-    container_name: chronograf
-    image: chronograf:1.8
-    restart: always
+  node-red:
+    image: nodered/node-red:4.0
+    container_name: node-red
+    user: "root"
     ports:
-      - 8888:8888
+      - "1700:1700"
+    environment:
+      - MONGODB_URL=${MONGODB_URL}
+      - MONGODB=${MONGODB}
+      - MONGODB_USERNAME=${MONGODB_USERNAME}
+      - MONGODB_PASSWORD=${MONGODB_PASSWORD}
+      - MONGODB_DBNAME=${MONGODB_DBNAME}
+      - MOSQUITTO_PASSWORD=${MOSQUITTO_PASSWORD}
+      - MOSQUITTO_USERNAME=${MOSQUITTO_USERNAME}
+      - MOSQUITTO_HOST=${MOSQUITTO_HOST}
+      - MOSQUITTO_PORT=${MOSQUITTO_PORT}
+      - INFLUXDB_TOKEN=${INFLUXDB_TOKEN}
+      - INFLUXDB_ORG=${INFLUXDB_ORG}
+      - INFLUXDB_BUCKET=${INFLUXDB_BUCKET}
+      - MEASUREMENT=${MEASUREMENT}
+      - CHATID=${CHATID}
+
+      
+    volumes:
+      - "node-red-data:/data"
+      # - ./node_red/flows.json:/data/flows.json:rw
+      # - ./node_red/flows_cred.json:/data/flows_cred.json:rw
+      - ./node_red/settings.js:/data/settings.js:rw
+      - ./node_red/user-authentication.js:/data/user-authentication.js:rw
+      - ./node_red/auth:/data/auth:rw
+      # - ./node_red/package.json:/data/package.json:rw
+      - ./node_red/entrypoint.sh:/usr/src/node-red/entrypoint.sh
+      - ./node_red/images:/data/images:rw
+    entrypoint: ["/bin/sh", "/usr/src/node-red/entrypoint.sh"]
+    
+  api-php:
+    container_name: api-php
+    build:
+      context: ./gateways
+      dockerfile: Dockerfile
+    restart: always
     networks:
       - iot
+    ports:
+      - 2000:80
+      
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "443:443"
     volumes:
-      - chronograf_data:/var/lib/chronograf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/certificates:/etc/nginx/certificates
+    networks:
+      - iot
     depends_on:
-      - influxdb
-    environment:
-      - INFLUXDB_URL=http://influxdb:8086
-      - INFLUXDB_USERNAME=${INFLUXDB_USERNAME}
-      - INFLUXDB_PASSWORD=${INFLUXDB_PASSWORD}
+      - api
+      - api-php
+
 networks:
   iot:
+    driver: bridge
 
 volumes:
   mosquitto_data:
   mosquitto_log:
   influxdb_data:
-  grafana_data:
-  chronograf_data:
+  mongo-data:
+  node-red-data:
+  api_auth_data:

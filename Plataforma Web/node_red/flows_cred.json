@@ -1,0 +1,9 @@
+{
+    "mqtt-broker-id": {
+        "user": "${MOSQUITTO_USERNAME}",
+        "password": "${MOSQUITTO_PASSWORD}"
+    },
+    "a472c25b1fceebe7":{
+
+    }
+}

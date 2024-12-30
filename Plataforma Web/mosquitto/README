@@ -6,5 +6,29 @@ docker compose up -d
 
 # probar si recibe peticiones
 docker container exec mosquitto mosquitto_pub -t 'bedroom/temperature' -m '20'
-docker run -it --rm efrecon/mqtt-client pub -h IPSERVER -p 1883 -t "iescelia/aula22/co2" -m '30'                                                                                         
-docker run -it --rm efrecon/mqtt-client sub -h IPSERVER -t "iescelia/#" 
+docker run -it --rm efrecon/mqtt-client pub -h IPSERVER -p 1883 -t "senaiot/aula22/co2" -m '30'                                                                                         
+docker run -it --rm efrecon/mqtt-client sub -h IPSERVER -t "senaiot/#" 
+
+
+
+# Data example termometro: 
+{
+  "generatorID": "generator22",
+  "battery": 90, 
+  "humidity": 10, 
+  "temperature": 40
+}
+
+# Data example Termomanómetro:
+{
+  "generatorID": "generator20",
+  "humidity": 10,
+  "temperature": 40,
+  "radiation": 10
+}
+
+# Data example weighing:
+{
+  "generatorID": "generator20",
+  "mass": 10000
+}

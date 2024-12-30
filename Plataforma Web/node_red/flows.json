@@ -1,0 +1,1506 @@
+[
+    {
+        "id": "63fa3801cbc95a8c",
+        "type": "tab",
+        "label": "senaiot",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "734c9e98edc4281f",
+        "type": "tab",
+        "label": "HUMEDAD FINAL",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a5ebdbc7941fa0d6",
+        "type": "tab",
+        "label": "SOCKET",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6c9f45819980803b",
+        "type": "tab",
+        "label": "DASHBOARD",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "465faf9ec7b2de34",
+        "type": "tab",
+        "label": "TELEGRAM",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1ce0a5b755262735",
+        "type": "tab",
+        "label": "WHATSAPP",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "efdad1a3455a5ae2",
+        "type": "tab",
+        "label": "INFLUXDB",
+        "disabled": false,
+        "info": "",
+        "env": [
+            {
+                "name": "URLINFLUX",
+                "value": "${MOSQUITTO_HOST}",
+                "type": "str"
+            },
+            {
+                "name": "TOKENINFLUX",
+                "value": "${INFLUXDB_TOKEN}",
+                "type": "str"
+            },
+            {
+                "name": "ORGINFLUX",
+                "value": "${INFLUXDB_ORG}",
+                "type": "str"
+            },
+            {
+                "name": "BUCKETINFLUX",
+                "value": "${INFLUXDB_BUCKET}",
+                "type": "str"
+            },
+            {
+                "name": "MEASUREMENT",
+                "value": "${MEASUREMENT}",
+                "type": "str"
+            }
+        ]
+    },
+    {
+        "id": "d9633765db4e424c",
+        "type": "tab",
+        "label": "LOGS",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "mqtt-broker-id",
+        "type": "mqtt-broker",
+        "name": "MQTT Broker",
+        "broker": "${MOSQUITTO_HOST}",
+        "port": "1603",
+        "clientid": "node-red",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a472c25b1fceebe7",
+        "type": "telegram bot",
+        "botname": "ERRORSENAIOT",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "testenvironment": false,
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "427d2f81ce570ddc",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://165.227.126.18:1500",
+        "timeout": "10",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "20ab3efb6c6101c3",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "INFLUXDB",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://165.227.126.18:1500",
+        "timeout": "10",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "a8d09637149c9669",
+        "type": "global-config",
+        "name": "global-config",
+        "env": [
+            {
+                "name": "TOKENTELEGRAM",
+                "value": "7099579404:AAH_N_UlCub0Ha1SOEs4vQmOwkIzg3Hc9MI",
+                "type": "str"
+            },
+            {
+                "name": "CHATID",
+                "value": "-4541042429",
+                "type": "str"
+            }
+        ]
+    },
+    {
+        "id": "8e180b259d1bee59",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#003308",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#003308",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#003308",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#008014",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#003308",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "SENA IOT DASHBOARD",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "1d54ad0aff60aed1",
+        "type": "ui_tab",
+        "name": "SENA IOT",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ee7d31641af61675",
+        "type": "ui_group",
+        "name": "BATERIA BASCULA",
+        "tab": "1d54ad0aff60aed1",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "087489f688d07c91",
+        "type": "ui_group",
+        "name": "MASA BASCULA",
+        "tab": "1d54ad0aff60aed1",
+        "order": 2,
+        "disp": true,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d0f4b262cda026f7",
+        "type": "ui_group",
+        "name": "HUMEDAD FINAL",
+        "tab": "1d54ad0aff60aed1",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "74047155abd1ecac",
+        "type": "websocket-client",
+        "path": "https://secadodecafe.online",
+        "tls": "",
+        "wholemsg": "false",
+        "hb": "0",
+        "subprotocol": "node",
+        "headers": []
+    },
+    {
+        "id": "732286a4989dadfc",
+        "type": "websocket-listener",
+        "path": "/ws://165.227.126.18:4000/node",
+        "wholemsg": "false"
+    },
+    {
+        "id": "985ecbc7.67a138",
+        "type": "websocket-listener",
+        "z": "a5ebdbc7941fa0d6",
+        "path": "/ws/simple",
+        "wholemsg": "false"
+    },
+    {
+        "id": "4db78eb653d6d50d",
+        "type": "websocket-client",
+        "path": "ws://165.227.126.18:4000/ws/echo",
+        "tls": "",
+        "wholemsg": "false",
+        "hb": "0",
+        "subprotocol": "",
+        "headers": []
+    },
+    {
+        "id": "542f751e15337c46",
+        "type": "websocket-listener",
+        "path": "/ws/echo",
+        "wholemsg": "false"
+    },
+    {
+        "id": "debug-node",
+        "type": "debug",
+        "z": "63fa3801cbc95a8c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1550,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "e47c7b5187940bee",
+        "type": "function",
+        "z": "63fa3801cbc95a8c",
+        "name": "validate fields weighing",
+        "func": "var payload = msg.payload;\nconsole.log('test')\nconst fields = [\n    {\n        name: \"i\",\n        type: \"string\",\n        required: true\n    },\n    {\n        name: \"b\",\n        type: \"number\",\n        required: true\n    },\n    {\n        name: \"m\",\n        type: \"number\",\n        required: true\n    },\n    {\n        name: \"f\",\n        type: \"date\",\n        required: true\n    }\n]\n\n//validate types\nfor (const field of fields) {\n    if (field.required && (payload[field.name] === null || payload[field.name] === undefined)){\n        console.log(\"Field is required\", field.name);\n        node.error(`Field is required ${field.name}`, msg);\n\n        return null\n    }\n    if (field.type === \"number\" && typeof payload[field.name] !== \"number\") {\n        console.log(\"Field is not a number\", field.name);\n        node.error(`Field is not a number ${field.name}`, msg);\n\n        return null\n    }\n    if (field.type === \"string\" && typeof payload[field.name] !== \"string\") {\n        console.log(\"Field is not a string\", field.name);\n        node.error(`Field is not a string ${field.name}`, msg);\n\n        return null\n    }\n    if (field.type === \"date\" && !Date.parse(payload[field.name])) {\n        console.log(\"Field is not a date\", field.name);\n        node.error(`Field is not a date${field.name}`, msg);\n\n        return null\n    }\n}\n\nconst msgParsed = {...msg,payload}\n\nreturn msgParsed\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 700,
+        "wires": [
+            [
+                "5757312b1429d3bc"
+            ]
+        ]
+    },
+    {
+        "id": "a4e9c00be5efa054",
+        "type": "function",
+        "z": "63fa3801cbc95a8c",
+        "name": "validate date int",
+        "func": "\nconsole.log(\"time\")\nconsole.log(msg)\nconst minutesDifference = 5;\nconst millisecondsDifference = minutesDifference * 60000;\nconst currentDate = new Date();\nconst dateSensor = new Date(msg.payload.f);\n\n// Validar que la fecha del sensor no sea 5 minutos mayor o menor a la fecha actual\nconsole.log(currentDate)\nconsole.log(dateSensor)\nconst timeDifference = currentDate.getTime() - dateSensor.getTime()\nconsole.log(timeDifference)\n\nif (timeDifference > millisecondsDifference || timeDifference < -millisecondsDifference) {\n    console.log('Fecha del sensor no es correcta');\n    node.error(\"Date invalid\", msg);\n    return null\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 560,
+        "wires": [
+            [
+                "3fd911e9083d8902",
+                "39d45fb6ef402f78"
+            ]
+        ]
+    },
+    {
+        "id": "c38bd075c61d5b4c",
+        "type": "function",
+        "z": "63fa3801cbc95a8c",
+        "name": "validate fields termometro",
+        "func": "var payload = msg.payload;\n\nconst fields = [\n    {\n        name: \"i\",\n        type: \"string\",\n        required: true\n    },\n    {\n        name: \"b\",\n        type: \"number\",\n        required: true\n    },\n    {\n        name: \"ti\",\n        type: \"string\",\n        required: true\n    },\n    {\n        name: \"m\",\n        type: \"number\",\n        required: true\n    },\n    {\n        name: \"h\",\n        type: \"number\",\n        required: true\n    },\n    {\n        name: \"r\",\n        type: \"number\",\n        required: true\n    },\n    {\n        name: \"f\",\n        type: \"date\",\n        required: true\n    }\n]\n\n\nfor (const field of fields) {\n    if (field.required && (payload[field.name] === null || payload[field.name] === undefined)) {\n        console.log(\"Field is required\", field.name);\n        msg.payload = {\n            error: `Field is required ${field.name}`\n        }\n        return null\n    }\n    if (field.type === \"number\" && typeof payload[field.name] !== \"number\") {\n        console.log(\"Field is not a number\", field.name);\n        msg.payload = {\n            error: `Field is not a number ${field.name}`\n        }\n        return null\n    }\n    if (field.type === \"string\" && typeof payload[field.name] !== \"string\") {\n        console.log(\"Field is not a string\", field.name);\n        msg.payload = {\n            error: `Field is not a string ${field.name}`\n        }\n        return null\n    }\n    if (field.type === \"date\" && !Date.parse(payload[field.name])) {\n        console.log(\"Field is not a date\", field.name);\n        msg.payload = {\n            error: `Field is not a date ${field.name}`\n        }\n        return null\n    }\n}\n\nconst msgParsed = {...msg,payload}\n\nreturn msgParsed",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 560,
+        "wires": [
+            [
+                "a4e9c00be5efa054"
+            ]
+        ]
+    },
+    {
+        "id": "aedf1658a4f2e4f1",
+        "type": "function",
+        "z": "63fa3801cbc95a8c",
+        "name": "validate fields termohigrometro",
+        "func": "var payload = msg.payload;\n\nconst fields = [\n    {\n        name: \"i\",\n        type: \"string\",\n        required: true\n    },\n    {\n        name: \"t\",\n        type: \"number\",\n        required: true\n    },\n    {\n        name: \"h\",\n        type: \"number\",\n        required: true\n    },\n    {\n        name: \"l\",\n        type: \"number\",\n        required: true\n    },\n    {\n        name: \"u\",\n        type: \"number\",\n        required: true\n    },\n    {\n        name: \"b\",\n        type: \"number\",\n        required: true\n    },\n    {\n        name: \"f\",\n        type: \"date\",\n        required: true\n    }\n]\n\nfor (const field of fields) {\n    if (field.required && (payload[field.name] === null || payload[field.name] === undefined)){\n        console.log(\"Field is required\", field.name);\n        msg.payload = {\n            error: `Field is required ${field.name}`\n        }\n        return null\n    }\n    if (field.type === \"number\" && typeof payload[field.name] !== \"number\") {\n        console.log(\"Field is not a number\", field.name);\n        msg.payload = {\n            error: `Field is not a number ${field.name}`\n        }\n        return null\n    }\n    if (field.type === \"string\" && typeof payload[field.name] !== \"string\") {\n        console.log(\"Field is not a string\", field.name);\n        msg.payload = {\n            error: `Field is not a string ${field.name}`\n        }\n        return null\n    }\n    if (field.type === \"date\" && !Date.parse(payload[field.name])) {\n        console.log(\"Field is not a date\", field.name);\n        msg.payload = {\n            error: `Field is not a date ${field.name}`\n        }\n        return null\n    }\n}\n\nconst msgParsed = { ...msg, payload }\n\nreturn msgParsed",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 440,
+        "wires": [
+            [
+                "a4e9c00be5efa054"
+            ]
+        ]
+    },
+    {
+        "id": "757c9939a91a1359",
+        "type": "catch",
+        "z": "63fa3801cbc95a8c",
+        "name": "capture errors",
+        "scope": null,
+        "uncaught": false,
+        "x": 190,
+        "y": 1060,
+        "wires": [
+            [
+                "f8bcd50a73d1674d"
+            ]
+        ]
+    },
+    {
+        "id": "f8bcd50a73d1674d",
+        "type": "debug",
+        "z": "63fa3801cbc95a8c",
+        "name": "show errors",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "3fd911e9083d8902",
+        "type": "link out",
+        "z": "63fa3801cbc95a8c",
+        "name": "INFLUX",
+        "mode": "link",
+        "links": [
+            "b749bb79d5bd0c0f"
+        ],
+        "x": 1515,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "39d45fb6ef402f78",
+        "type": "link out",
+        "z": "63fa3801cbc95a8c",
+        "name": "DASHBOARD",
+        "mode": "link",
+        "links": [
+            "df5c12f8f4b1fc14"
+        ],
+        "x": 1515,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "5757312b1429d3bc",
+        "type": "link out",
+        "z": "63fa3801cbc95a8c",
+        "name": "WHATSAPP",
+        "mode": "link",
+        "links": [
+            "a3e60079efd61bb7"
+        ],
+        "x": 1075,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "e1388cb5f5b49829",
+        "type": "switch",
+        "z": "63fa3801cbc95a8c",
+        "name": "",
+        "property": "payload.sensor",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "termohigrometro",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "bascula",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "termometro",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 570,
+        "y": 560,
+        "wires": [
+            [
+                "aedf1658a4f2e4f1"
+            ],
+            [
+                "e47c7b5187940bee"
+            ],
+            [
+                "c38bd075c61d5b4c"
+            ]
+        ]
+    },
+    {
+        "id": "724311c2a4561b91",
+        "type": "function",
+        "z": "63fa3801cbc95a8c",
+        "name": "validate topics",
+        "func": "const topic = msg.topic.toString()\n\nif (topic.split('/').length !== 2) {\n    node.node.error('Levels are invalid of topic', msg);\n\n    return null\n}else if (topic.split('/')[0] !== 'senaiot') {\n    node.node.error('First level is invalid of topic', msg);\n\n    return null\n}\n\nconst msgParsed = {\n    ...msg,\n    payload:{\n        ...msg.payload,\n        sensor:topic.split('/')[1],\n        topic:topic,\n        }\n}\n\nreturn msgParsed;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 560,
+        "wires": [
+            [
+                "e1388cb5f5b49829"
+            ]
+        ]
+    },
+    {
+        "id": "84d4620eadcb3736",
+        "type": "link in",
+        "z": "63fa3801cbc95a8c",
+        "name": "VALIDATE HUMEDAD",
+        "links": [
+            "8461c120fd378478"
+        ],
+        "x": 1135,
+        "y": 660,
+        "wires": [
+            [
+                "a4e9c00be5efa054"
+            ]
+        ]
+    },
+    {
+        "id": "f0b205afb345e5ed",
+        "type": "mqtt in",
+        "z": "63fa3801cbc95a8c",
+        "name": "",
+        "topic": "senaiot/bascula",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "mqtt-broker-id",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 80,
+        "y": 680,
+        "wires": [
+            [
+                "724311c2a4561b91"
+            ]
+        ]
+    },
+    {
+        "id": "96c7952211f74f44",
+        "type": "mqtt in",
+        "z": "63fa3801cbc95a8c",
+        "name": "",
+        "topic": "senaiot/termohigrometro",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "mqtt-broker-id",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 110,
+        "y": 420,
+        "wires": [
+            [
+                "724311c2a4561b91"
+            ]
+        ]
+    },
+    {
+        "id": "b94c112dc8559a40",
+        "type": "mqtt in",
+        "z": "63fa3801cbc95a8c",
+        "name": "",
+        "topic": "senaiot/termometro",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "mqtt-broker-id",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 90,
+        "y": 560,
+        "wires": [
+            [
+                "724311c2a4561b91"
+            ]
+        ]
+    },
+    {
+        "id": "a3e60079efd61bb7",
+        "type": "link in",
+        "z": "734c9e98edc4281f",
+        "name": "HUMEDAD FINAL",
+        "links": [
+            "5757312b1429d3bc"
+        ],
+        "x": 385,
+        "y": 480,
+        "wires": [
+            [
+                "aeac3b4231eee6b3"
+            ]
+        ]
+    },
+    {
+        "id": "aeac3b4231eee6b3",
+        "type": "function",
+        "z": "734c9e98edc4281f",
+        "name": "HUMEDAD FINAL",
+        "func": "const Pi = 200; // masa inicial del café en gramos\nconst Chi = 0.53; // contenido inicial de humedad (53% constante)\nconst Pf = msg.payload.m; // masa final en gramos\nlet Chf = 0\nif(Pf > 0){\n    Chf = (1 - (Pi * (1 - Chi)) / Pf) * 100;\n}\nconsole.log(\"Chf:\", Chf);\nif(Chf < 0){\n    Chf = 0\n}\n\nmsg.payload.chf = Chf\nconsole.log(msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 480,
+        "wires": [
+            [
+                "8461c120fd378478",
+                "61ebbd96ddb6a802"
+            ]
+        ]
+    },
+    {
+        "id": "c6196dcde95ad21c",
+        "type": "link out",
+        "z": "734c9e98edc4281f",
+        "name": "WHATSAPP",
+        "mode": "link",
+        "links": [
+            "79d695ed65809bec"
+        ],
+        "x": 1085,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "8461c120fd378478",
+        "type": "link out",
+        "z": "734c9e98edc4281f",
+        "name": "DASHBOARD",
+        "mode": "link",
+        "links": [
+            "84d4620eadcb3736"
+        ],
+        "x": 825,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "61ebbd96ddb6a802",
+        "type": "switch",
+        "z": "734c9e98edc4281f",
+        "name": "VALIDAR HUMEDAD",
+        "property": "payload.chf",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "1",
+                "vt": "num",
+                "v2": "12",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 880,
+        "y": 360,
+        "wires": [
+            [
+                "c6196dcde95ad21c"
+            ]
+        ]
+    },
+    {
+        "id": "5272aabeecc5d5ea",
+        "type": "function",
+        "z": "a5ebdbc7941fa0d6",
+        "name": "create token",
+        "func": "const base64 = Buffer.from('V1RwUtfjo3vEknL2:Jdidhuj5664Ncd').toString('base64');\nmsg.payload.token = base64\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 140,
+        "wires": [
+            [
+                "7c80fd7af5a6aad6"
+            ]
+        ]
+    },
+    {
+        "id": "6a9b05d1a54e68f8",
+        "type": "http request",
+        "z": "a5ebdbc7941fa0d6",
+        "name": "SEND MESSAGE",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "http://165.227.126.18:4000/api/v1/sensors/socket",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 870,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7c80fd7af5a6aad6",
+        "type": "change",
+        "z": "a5ebdbc7941fa0d6",
+        "name": "Set Headers",
+        "rules": [
+            {
+                "t": "set",
+                "p": "headers.api_key",
+                "pt": "msg",
+                "to": "V1RwUtfjo3vEknL2",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "headers.token",
+                "pt": "msg",
+                "to": "payload.token",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 140,
+        "wires": [
+            [
+                "6a9b05d1a54e68f8"
+            ]
+        ]
+    },
+    {
+        "id": "63d423388ed4c42c",
+        "type": "link in",
+        "z": "a5ebdbc7941fa0d6",
+        "name": "SOCKET",
+        "links": [
+            "f5e0d6d717487d45"
+        ],
+        "x": 165,
+        "y": 140,
+        "wires": [
+            [
+                "5272aabeecc5d5ea"
+            ]
+        ]
+    },
+    {
+        "id": "4aaa6676364bee5e",
+        "type": "ui_chart",
+        "z": "6c9f45819980803b",
+        "name": "",
+        "group": "ee7d31641af61675",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "BATERIA BASCULA",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1100,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "df5c12f8f4b1fc14",
+        "type": "link in",
+        "z": "6c9f45819980803b",
+        "name": "SENSOR DATA",
+        "links": [
+            "39d45fb6ef402f78"
+        ],
+        "x": 145,
+        "y": 320,
+        "wires": [
+            [
+                "0fdf0290f979168b"
+            ]
+        ]
+    },
+    {
+        "id": "2104fa021e244e1f",
+        "type": "ui_gauge",
+        "z": "6c9f45819980803b",
+        "name": "",
+        "group": "ee7d31641af61675",
+        "order": 2,
+        "width": "7",
+        "height": "7",
+        "gtype": "gage",
+        "title": "BATERIA BASCULA",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1100,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "0fdf0290f979168b",
+        "type": "switch",
+        "z": "6c9f45819980803b",
+        "name": "SWITCH SENSOR",
+        "property": "payload.sensor",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "bascula",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "termomanometro",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "termometro",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 370,
+        "y": 320,
+        "wires": [
+            [
+                "6be40e93d2e3188c",
+                "11d79e7bbd971837",
+                "bca9120cfba2c506"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6be40e93d2e3188c",
+        "type": "change",
+        "z": "6c9f45819980803b",
+        "name": "SET BAT BASCULA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.b",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 120,
+        "wires": [
+            [
+                "2104fa021e244e1f",
+                "4aaa6676364bee5e"
+            ]
+        ]
+    },
+    {
+        "id": "11d79e7bbd971837",
+        "type": "change",
+        "z": "6c9f45819980803b",
+        "name": "SET MASS BASCULA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.m",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 240,
+        "wires": [
+            [
+                "dc1e1cf12a8122cd",
+                "2c7d28477c00613c"
+            ]
+        ]
+    },
+    {
+        "id": "2c7d28477c00613c",
+        "type": "ui_chart",
+        "z": "6c9f45819980803b",
+        "name": "",
+        "group": "087489f688d07c91",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "MASA BASCULA",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "200",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1090,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dc1e1cf12a8122cd",
+        "type": "ui_gauge",
+        "z": "6c9f45819980803b",
+        "name": "",
+        "group": "087489f688d07c91",
+        "order": 1,
+        "width": "7",
+        "height": "7",
+        "gtype": "donut",
+        "title": "MASA BASCULA",
+        "label": "gramos",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1090,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "bca9120cfba2c506",
+        "type": "change",
+        "z": "6c9f45819980803b",
+        "name": "SET MASS BASCULA",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.chf",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 380,
+        "wires": [
+            [
+                "43ed801beeb0afcd",
+                "37e0b5cc0ce6b3ec"
+            ]
+        ]
+    },
+    {
+        "id": "37e0b5cc0ce6b3ec",
+        "type": "ui_chart",
+        "z": "6c9f45819980803b",
+        "name": "",
+        "group": "d0f4b262cda026f7",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "HUMEDAD FINAL",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "200",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1050,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43ed801beeb0afcd",
+        "type": "ui_gauge",
+        "z": "6c9f45819980803b",
+        "name": "",
+        "group": "d0f4b262cda026f7",
+        "order": 2,
+        "width": "6",
+        "height": "7",
+        "gtype": "donut",
+        "title": "HUMEDAD FINAL",
+        "label": "gramos",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1050,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "17ef9341db3cc71c",
+        "type": "telegram sender",
+        "z": "465faf9ec7b2de34",
+        "name": "Send Error telegram",
+        "bot": "a472c25b1fceebe7",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 820,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "97845c8d53a2d563",
+        "type": "function",
+        "z": "465faf9ec7b2de34",
+        "name": "formart message",
+        "func": "console.log(\"send problem \",msg)\n\nconst parsePayload = JSON.stringify(msg?.payload)\nvar message = `\n# TOPIC : ${msg?.topic || 'No enviado'} \\n\n\ndata send: ${parsePayload || 'No encontrado'} \\n\n\ndata error: ${msg?.error?.message || 'No encontrado'};\n`\n// Configuramos el payload\nmsg.payload = { chatId: env.get('CHATID'), type: 'message', content: message};\n// Configuramos las opciones\nmsg.payload.options = {disable_web_page_preview: true, parse_mode: \"Markdown\"};\n// Enviamos el mensaje return msg;\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "17ef9341db3cc71c"
+            ]
+        ]
+    },
+    {
+        "id": "429f0b47072e8ba0",
+        "type": "link in",
+        "z": "465faf9ec7b2de34",
+        "name": "ERRORS",
+        "links": [],
+        "x": 195,
+        "y": 280,
+        "wires": [
+            [
+                "97845c8d53a2d563"
+            ]
+        ]
+    },
+    {
+        "id": "e85ba21318e898a4",
+        "type": "function",
+        "z": "1ce0a5b755262735",
+        "name": "create token",
+        "func": "const base64 = Buffer.from('V1RwUtfjo3vEknL2:Jdidhuj5664Ncd').toString('base64');\nmsg.payload.token = base64\nmsg.payload.type = 'people'\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 260,
+        "wires": [
+            [
+                "12f81da01cea2fe9"
+            ]
+        ]
+    },
+    {
+        "id": "807ffaea4ebe8bbc",
+        "type": "http request",
+        "z": "1ce0a5b755262735",
+        "name": "SEND MESSAGE",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "body",
+        "url": "http://165.227.126.18:4000/api/v1/whatsapp/sendMessage",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 870,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "12f81da01cea2fe9",
+        "type": "change",
+        "z": "1ce0a5b755262735",
+        "name": "Set Headers",
+        "rules": [
+            {
+                "t": "set",
+                "p": "headers.api_key",
+                "pt": "msg",
+                "to": "V1RwUtfjo3vEknL2",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "headers.token",
+                "pt": "msg",
+                "to": "payload.token",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "807ffaea4ebe8bbc"
+            ]
+        ]
+    },
+    {
+        "id": "79d695ed65809bec",
+        "type": "link in",
+        "z": "1ce0a5b755262735",
+        "name": "WHATSAPP",
+        "links": [
+            "c6196dcde95ad21c"
+        ],
+        "x": 165,
+        "y": 260,
+        "wires": [
+            [
+                "e85ba21318e898a4"
+            ]
+        ]
+    },
+    {
+        "id": "af4f686b4426824e",
+        "type": "influxdb out",
+        "z": "efdad1a3455a5ae2",
+        "influxdb": "20ab3efb6c6101c3",
+        "name": "influxdb",
+        "measurement": "data_sensor",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "my-init-org",
+        "bucket": "my-init-bucket",
+        "x": 960,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "b749bb79d5bd0c0f",
+        "type": "link in",
+        "z": "efdad1a3455a5ae2",
+        "name": "MQTT",
+        "links": [
+            "3fd911e9083d8902"
+        ],
+        "x": 485,
+        "y": 820,
+        "wires": [
+            [
+                "02c18874bfc7f815",
+                "17e39d1381bdd41c",
+                "fb722ac39f28af71"
+            ]
+        ]
+    },
+    {
+        "id": "fb722ac39f28af71",
+        "type": "link out",
+        "z": "efdad1a3455a5ae2",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "55dbc5fbe7428daf"
+        ],
+        "x": 675,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "02c18874bfc7f815",
+        "type": "function",
+        "z": "efdad1a3455a5ae2",
+        "name": "function 2",
+        "func": "msg.payload = [\n    {\n        \"topic\": msg.topic\n    },\n    msg.payload\n]\n\nconsole.log(\"data\", msg)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 900,
+        "wires": [
+            [
+                "af4f686b4426824e",
+                "f5e0d6d717487d45"
+            ]
+        ]
+    },
+    {
+        "id": "17e39d1381bdd41c",
+        "type": "debug",
+        "z": "efdad1a3455a5ae2",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "f5e0d6d717487d45",
+        "type": "link out",
+        "z": "efdad1a3455a5ae2",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "63d423388ed4c42c"
+        ],
+        "x": 825,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "c0e90e4b5ec8ab2e",
+        "type": "file",
+        "z": "d9633765db4e424c",
+        "name": "logs-sensors",
+        "filename": "logs_system",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 670,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "55dbc5fbe7428daf",
+        "type": "link in",
+        "z": "d9633765db4e424c",
+        "name": "LOGS-SYSTEM",
+        "links": [
+            "fb722ac39f28af71"
+        ],
+        "x": 275,
+        "y": 340,
+        "wires": [
+            [
+                "76f1028121da397f"
+            ]
+        ]
+    },
+    {
+        "id": "76f1028121da397f",
+        "type": "function",
+        "z": "d9633765db4e424c",
+        "name": "function 1",
+        "func": "\nmsg.payload = {\n    ...msg.payload,\n    test: \"eee\",\n    time: new Date()\n}\n\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 340,
+        "wires": [
+            [
+                "c0e90e4b5ec8ab2e"
+            ]
+        ]
+    }
+]
